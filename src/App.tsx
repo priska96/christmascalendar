@@ -88,19 +88,19 @@ function App() {
                   onClick={() => {
                     const today = new Date();
                     console.log(today.getMonth());
-                    if (today.getMonth() !== 11) {
-                      dispatch(openDoor(0));
-                      setOpened(0);
-                      return;
-                    }
-                    if (today.getDate() < day) {
-                      if (doorState.doors.includes(day)) {
-                        dispatch(closeDoor(day));
-                      }
-                      dispatch(openDoor(0));
-                      setOpened(0);
-                      return;
-                    }
+                    // if (today.getMonth() !== 11) {
+                    //   dispatch(openDoor(0));
+                    //   setOpened(0);
+                    //   return;
+                    // }
+                    // if (today.getDate() < day) {
+                    //   if (doorState.doors.includes(day)) {
+                    //     dispatch(closeDoor(day));
+                    //   }
+                    //   dispatch(openDoor(0));
+                    //   setOpened(0);
+                    //   return;
+                    // }
                     if (doorState.doors.includes(day)) {
                       dispatch(closeDoor(day));
                     } else {

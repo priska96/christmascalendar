@@ -16,6 +16,7 @@ import { gifts as gifts2021 } from "./calendars/calendar2021";
 import { gifts as gifts2022 } from "./calendars/calendar2022";
 import { gifts as gifts2023 } from "./calendars/calendar2023";
 import { gifts as gifts2025 } from "./calendars/calendar2025";
+import { gifts as gifts2026 } from "./calendars/calendar2026";
 import { useAppDispatch, useAppSelector } from "./redux/store";
 import { type Gift, type Gifts } from "./types/gifts";
 import { IMAGE_KIT_ENDPOINT } from "./constants";
@@ -80,6 +81,11 @@ function DoorModal({ id }: { id: number }) {
   React.useEffect(() => {
     const today = new Date();
     switch (today.getFullYear()) {
+      case 2026:
+        if (!isEqual(gifts, gifts2026)) {
+          setGifts({ ...gifts2026 });
+        }
+        break;
       case 2025:
         if (!isEqual(gifts, gifts2025)) {
           setGifts({ ...gifts2025 });
@@ -96,7 +102,7 @@ function DoorModal({ id }: { id: number }) {
         }
         break;
       default:
-        setGifts({ ...gifts2025 });
+        setGifts({ ...gifts2026 });
     }
   }, []);
   React.useEffect(() => {
@@ -104,7 +110,9 @@ function DoorModal({ id }: { id: number }) {
   }, [doors.doorModal, open]);
 
   const update = (
-    e: React.MouseEvent<HTMLElement, MouseEvent> | React.TouchEvent<HTMLElement>
+    e:
+      | React.MouseEvent<HTMLElement, MouseEvent>
+      | React.TouchEvent<HTMLElement>,
   ) => {
     if (!e) return;
     const x =
