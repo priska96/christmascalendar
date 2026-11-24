@@ -24,6 +24,7 @@
 /src/static/**
 !/src/static/**/
 !/src/static/**/*.txt
+!/src/static/2026
 
 npm-debug.log*
 yarn-debug.log*
