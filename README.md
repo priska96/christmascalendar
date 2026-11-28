@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Text gifts support Markdown formatting. Import text assets with Vite's `?raw`
+suffix (for example, `import Intro from "../static/2026/Intro.txt?raw"`).
+Single line breaks are preserved.
+
+To add the interactive repentance experience to a calendar, use a gift such
+as `{ title: "A New Beginning", type: "repentance" }` for the chosen day.
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -8,6 +8,7 @@ export type Mp3Gift = {
   title: string;
   subtitle: string;
   content: string; // imported mp3 file
+  transcript?: string;
   img: string;
   id: number;
   type: "mp3";
@@ -16,6 +17,7 @@ export type Mp3Gift = {
 export type Mp4Gift = {
   title: string;
   content: string; // imported mp4 file
+  transcript?: string;
   id: number;
   type: "mp4";
 };
@@ -29,7 +31,7 @@ export type EmbedGift = {
 
 export type ImgGift = {
   title: string;
-  content: string; // imported image file
+  content: string | readonly string[];
   type: "img";
 };
 
@@ -69,6 +71,11 @@ export type QuestionGift = {
   type: "question";
 };
 
+export type RepentanceGift = {
+  title: string;
+  type: "repentance";
+};
+
 // Union type for all gifts
 export type Gift =
   | TextGift
@@ -80,7 +87,12 @@ export type Gift =
   | GameGift
   | CouponGift
   | SpiceGift
-  | QuestionGift;
+  | QuestionGift
+  | RepentanceGift
+  | { title: string; type: "promises-jar" }
+  | { title: string; type: "give-your-worries" }
+  | { title: string; type: "changing-thoughts" }
+  | { title: string; type: "small-step-of-change" };
 
 export type Gifts = {
   [key: number]: Gift;
